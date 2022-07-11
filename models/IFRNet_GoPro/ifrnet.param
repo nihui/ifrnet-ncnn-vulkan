@@ -1,0 +1,162 @@
+7767517
+160 202
+Input                    in0                      0 1 in0
+Input                    in1                      0 1 in1
+Input                    in2                      0 1 in2
+Split                    splitncnn_0              1 2 in0 4 5
+Split                    splitncnn_1              1 2 in1 7 8
+Convolution              conv_7                   1 1 5 9 0=32 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=864
+PReLU                    prelu_51                 1 1 9 10 0=32
+Convolution              conv_8                   1 1 10 11 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_52                 1 1 11 12 0=32
+Split                    splitncnn_2              1 2 12 13 14
+Convolution              conv_9                   1 1 14 15 0=48 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=13824
+PReLU                    prelu_53                 1 1 15 16 0=48
+Convolution              conv_10                  1 1 16 17 0=48 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=20736
+PReLU                    prelu_54                 1 1 17 18 0=48
+Split                    splitncnn_3              1 2 18 19 20
+Convolution              conv_11                  1 1 20 21 0=72 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=31104
+PReLU                    prelu_55                 1 1 21 22 0=72
+Convolution              conv_12                  1 1 22 23 0=72 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=46656
+PReLU                    prelu_56                 1 1 23 24 0=72
+Split                    splitncnn_4              1 2 24 25 26
+Convolution              conv_13                  1 1 26 27 0=96 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=62208
+PReLU                    prelu_57                 1 1 27 28 0=96
+Convolution              conv_14                  1 1 28 29 0=96 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=82944
+Convolution              conv_15                  1 1 8 30 0=32 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=864
+PReLU                    prelu_59                 1 1 30 31 0=32
+Convolution              conv_16                  1 1 31 32 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_60                 1 1 32 33 0=32
+Split                    splitncnn_5              1 2 33 34 35
+Convolution              conv_17                  1 1 35 36 0=48 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=13824
+PReLU                    prelu_61                 1 1 36 37 0=48
+Convolution              conv_18                  1 1 37 38 0=48 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=20736
+PReLU                    prelu_62                 1 1 38 39 0=48
+Split                    splitncnn_6              1 2 39 40 41
+Convolution              conv_19                  1 1 41 42 0=72 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=31104
+PReLU                    prelu_63                 1 1 42 43 0=72
+Convolution              conv_20                  1 1 43 44 0=72 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=46656
+PReLU                    prelu_64                 1 1 44 45 0=72
+Split                    splitncnn_7              1 2 45 46 47
+Convolution              conv_21                  1 1 47 48 0=96 1=3 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=62208
+PReLU                    prelu_65                 1 1 48 49 0=96
+Convolution              conv_22                  1 1 49 50 0=96 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=82944
+PReLU                    prelu_66                 1 1 50 51 0=96
+PReLU                    prelu_58                 1 1 29 52 0=96
+Concat                   cat_0                    3 1 52 51 in2 54 0=0
+Convolution              conv_23                  1 1 54 55 0=192 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=333504
+PReLU                    prelu_67                 1 1 55 56 0=192
+Split                    splitncnn_8              1 2 56 57 58
+Convolution              conv_24                  1 1 58 59 0=192 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=331776
+PReLU                    prelu_68                 1 1 59 60 0=192
+Slice                    tensor_split_0           1 2 60 61 62 -23300=2,160,-233 1=0
+Convolution              conv_25                  1 1 62 63 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_69                 1 1 63 64 0=32
+Concat                   cat_1                    2 1 61 64 65 0=0
+Convolution              conv_26                  1 1 65 66 0=192 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=331776
+PReLU                    prelu_70                 1 1 66 67 0=192
+Slice                    tensor_split_1           1 2 67 68 69 -23300=2,160,-233 1=0
+Convolution              conv_27                  1 1 69 70 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_71                 1 1 70 71 0=32
+Concat                   cat_2                    2 1 68 71 72 0=0
+Convolution              conv_28                  1 1 72 73 0=192 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=331776
+BinaryOp                 add_2                    2 1 57 73 74 0=0
+PReLU                    prelu_72                 1 1 74 75 0=192
+Deconvolution            deconv_47                1 1 75 76 0=76 1=4 11=4 12=1 13=2 14=1 18=0 19=0 2=1 3=2 4=1 5=1 6=233472
+Slice                    tensor_split_2           1 3 76 77 78 79 -23300=3,2,2,-233 1=0
+Split                    splitncnn_10             1 3 78 80 81 82
+Split                    splitncnn_9              1 3 77 83 84 85
+ifrnet.Warp              warp                     2 1 83 25 86
+ifrnet.Warp              pnnx_unique_16           2 1 80 46 87
+Concat                   cat_3                    5 1 79 86 87 84 81 88 0=0
+Convolution              conv_29                  1 1 88 89 0=216 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=427680
+PReLU                    prelu_73                 1 1 89 90 0=216
+Split                    splitncnn_11             1 2 90 91 92
+Convolution              conv_30                  1 1 92 93 0=216 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=419904
+PReLU                    prelu_74                 1 1 93 94 0=216
+Slice                    tensor_split_3           1 2 94 95 96 -23300=2,184,-233 1=0
+Convolution              conv_31                  1 1 96 97 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_75                 1 1 97 98 0=32
+Concat                   cat_4                    2 1 95 98 99 0=0
+Convolution              conv_32                  1 1 99 100 0=216 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=419904
+PReLU                    prelu_76                 1 1 100 101 0=216
+Slice                    tensor_split_4           1 2 101 102 103 -23300=2,184,-233 1=0
+Convolution              conv_33                  1 1 103 104 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_77                 1 1 104 105 0=32
+Concat                   cat_5                    2 1 102 105 106 0=0
+Convolution              conv_34                  1 1 106 107 0=216 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=419904
+BinaryOp                 add_3                    2 1 91 107 108 0=0
+PReLU                    prelu_78                 1 1 108 109 0=216
+Deconvolution            deconv_48                1 1 109 110 0=52 1=4 11=4 12=1 13=2 14=1 18=0 19=0 2=1 3=2 4=1 5=1 6=179712
+Slice                    tensor_split_5           1 3 110 111 112 113 -23300=3,2,2,-233 1=0
+Interp                   upsample_1               1 1 85 114 0=2 1=2.000000e+00 2=2.000000e+00 6=0
+Eltwise                  weighted_sum_0           2 1 111 114 115 0=1 -23301=2,1.000000e+00,2.000000e+00
+Split                    splitncnn_12             1 3 115 116 117 118
+Interp                   upsample_2               1 1 82 119 0=2 1=2.000000e+00 2=2.000000e+00 6=0
+Eltwise                  weighted_sum_1           2 1 112 119 120 0=1 -23301=2,1.000000e+00,2.000000e+00
+Split                    splitncnn_13             1 3 120 121 122 123
+ifrnet.Warp              pnnx_unique_17           2 1 116 19 124
+ifrnet.Warp              pnnx_unique_18           2 1 121 40 125
+Concat                   cat_6                    5 1 113 124 125 117 122 126 0=0
+Convolution              conv_35                  1 1 126 127 0=144 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=191808
+PReLU                    prelu_79                 1 1 127 128 0=144
+Split                    splitncnn_14             1 2 128 129 130
+Convolution              conv_36                  1 1 130 131 0=144 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=186624
+PReLU                    prelu_80                 1 1 131 132 0=144
+Slice                    tensor_split_6           1 2 132 133 134 -23300=2,112,-233 1=0
+Convolution              conv_37                  1 1 134 135 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_81                 1 1 135 136 0=32
+Concat                   cat_7                    2 1 133 136 137 0=0
+Convolution              conv_38                  1 1 137 138 0=144 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=186624
+PReLU                    prelu_82                 1 1 138 139 0=144
+Slice                    tensor_split_7           1 2 139 140 141 -23300=2,112,-233 1=0
+Convolution              conv_39                  1 1 141 142 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_83                 1 1 142 143 0=32
+Concat                   cat_8                    2 1 140 143 144 0=0
+Convolution              conv_40                  1 1 144 145 0=144 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=186624
+BinaryOp                 add_8                    2 1 129 145 146 0=0
+PReLU                    prelu_84                 1 1 146 147 0=144
+Deconvolution            deconv_49                1 1 147 148 0=36 1=4 11=4 12=1 13=2 14=1 18=0 19=0 2=1 3=2 4=1 5=1 6=82944
+Slice                    tensor_split_8           1 3 148 149 150 151 -23300=3,2,2,-233 1=0
+Interp                   upsample_3               1 1 118 152 0=2 1=2.000000e+00 2=2.000000e+00 6=0
+Eltwise                  weighted_sum_2           2 1 149 152 153 0=1 -23301=2,1.000000e+00,2.000000e+00
+Split                    splitncnn_15             1 3 153 154 155 156
+Interp                   upsample_4               1 1 123 157 0=2 1=2.000000e+00 2=2.000000e+00 6=0
+Eltwise                  weighted_sum_3           2 1 150 157 158 0=1 -23301=2,1.000000e+00,2.000000e+00
+Split                    splitncnn_16             1 3 158 159 160 161
+ifrnet.Warp              pnnx_unique_19           2 1 154 13 162
+ifrnet.Warp              pnnx_unique_20           2 1 159 34 163
+Concat                   cat_9                    5 1 151 162 163 155 160 164 0=0
+Convolution              conv_41                  1 1 164 165 0=96 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=86400
+PReLU                    prelu_85                 1 1 165 166 0=96
+Split                    splitncnn_17             1 2 166 167 168
+Convolution              conv_42                  1 1 168 169 0=96 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=82944
+PReLU                    prelu_86                 1 1 169 170 0=96
+Slice                    tensor_split_9           1 2 170 171 172 -23300=2,64,-233 1=0
+Convolution              conv_43                  1 1 172 173 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_87                 1 1 173 174 0=32
+Concat                   cat_10                   2 1 171 174 175 0=0
+Convolution              conv_44                  1 1 175 176 0=96 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=82944
+PReLU                    prelu_88                 1 1 176 177 0=96
+Slice                    tensor_split_10          1 2 177 178 179 -23300=2,64,-233 1=0
+Convolution              conv_45                  1 1 179 180 0=32 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=9216
+PReLU                    prelu_89                 1 1 180 181 0=32
+Concat                   cat_11                   2 1 178 181 182 0=0
+Convolution              conv_46                  1 1 182 183 0=96 1=3 11=3 12=1 13=1 14=1 2=1 3=1 4=1 5=1 6=82944
+BinaryOp                 add_13                   2 1 167 183 184 0=0
+PReLU                    prelu_90                 1 1 184 185 0=96
+Deconvolution            deconv_50                1 1 185 186 0=8 1=4 11=4 12=1 13=2 14=1 18=0 19=0 2=1 3=2 4=1 5=1 6=12288
+Slice                    tensor_split_11          1 4 186 187 188 189 190 -23300=4,2,2,1,-233 1=0
+Interp                   upsample_5               1 1 156 191 0=2 1=2.000000e+00 2=2.000000e+00 6=0
+Interp                   upsample_6               1 1 161 192 0=2 1=2.000000e+00 2=2.000000e+00 6=0
+Eltwise                  weighted_sum_4           2 1 187 191 193 0=1 -23301=2,1.000000e+00,2.000000e+00
+ifrnet.Warp              pnnx_unique_21           2 1 193 4 194
+Eltwise                  weighted_sum_5           2 1 188 192 195 0=1 -23301=2,1.000000e+00,2.000000e+00
+ifrnet.Warp              pnnx_unique_22           2 1 195 7 196
+Sigmoid                  sigmoid_0                1 1 189 197
+Split                    splitncnn_18             1 2 197 198 199
+BinaryOp                 sub_18                   1 1 198 200 0=7 1=1 2=1.000000e+00
+BinaryOp                 mul_19                   2 1 200 196 201 0=2
+BinaryOp                 mul_20                   2 1 199 194 202 0=2
+BinaryOp                 add_21                   2 1 202 201 203 0=0
+BinaryOp                 add_23                   2 1 203 190 out0 0=0
